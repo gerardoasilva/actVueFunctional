@@ -43,9 +43,27 @@ header {
   align-items: center;
 }
 
+header.navBar {
+  background-color: yellow
+}
+
 header h1 {
   padding: 8px;
   font-size: 64px;
+}
+
+header a.navItem {
+  padding: 0 10px;
+  text-decoration: none;
+}
+
+header a.navItem {
+  padding: 0 10px;
+  text-decoration: none;
+}
+
+header a.navItem:hover {
+  color: rgb(176, 173, 185);
 }
 
 /* custom-main */
@@ -71,4 +89,91 @@ footer {
 footer p {
   text-align: center;
   font-size: 18px;
+}
+
+/* MENU */
+nav{
+  /* display:inline-block; */
+  margin:0 auto;
+  background-color:#5d93e4;
+  box-shadow:0 1px 1px #ccc;
+  border-radius:2px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding-left: 5%;
+}
+
+nav a{
+  display:inline-block;
+  padding: 10px;
+  color:#fff !important;
+  font-weight:bold;
+  font-size:16px;
+  text-decoration:none !important;
+  line-height:1;
+  text-transform: uppercase;
+  background-color:transparent;
+
+  -webkit-transition:background-color 0.25s;
+  -moz-transition:background-color 0.25s;
+  transition:background-color 0.25s;
+}
+
+nav a:first-child{
+  border-radius:2px 0 0 2px;
+}
+
+nav a:last-child{
+  border-radius:0 2px 2px 0;
+}
+
+nav.home .home,
+nav.projects .projects,
+nav.services .services,
+nav.contact .contact{
+  background-color: rgb(30, 53, 184, 0.5);
+}
+
+p{
+  font-size:22px;
+  font-weight:bold;
+  color:#7d9098;
+}
+
+p b{
+  color:#ffffff;
+  display:inline-block;
+  padding:5px 10px;
+  background-color:#c4d7e0;
+  border-radius:2px;
+  text-transform:uppercase;
+  font-size:18px;
+}
+
+/* Home */
+
+#landing {
+  height: 100vh;
+  align-items: center;
+  background-color: rgb(255, 211, 89);
+  background: url('https://images.unsplash.com/photo-1584098115468-0f5307581d31?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max') no-repeat;
+  background-size: cover;
+}
+
+.title {
+  font-size: 5rem;
+  font-weight: 700;
+  color: white;
+}
+
+.description {
+  font-weight: 400;
+  color: black;
+}
+
+/* Services */
+
+#services {
+  margin-top: 50px;
 }

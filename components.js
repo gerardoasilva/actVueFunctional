@@ -70,25 +70,30 @@ Vue.component('list-item', {
   }
 })
 
-/* header, main, and footer components */
-Vue.component('custom-header', {
-  template: `
-    <header>
-      <h1>VueJS Checklist</h1>
-    </header>`
-})
-
-Vue.component('custom-main', {
+Vue.component('home', {
   data: function() {
     return {
       todos: [ 'Alfa', 'Bravo', 'Charlie', 'Delta', 'Echo' ]
     }
   },
   template: `
-  <main>
+  <main id="landing">
+        <div class="content">
+          <h1 class="title">This is our website</h1>
+          <p class="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam, eligendi.</p>
+        </div>
+      </main>`
+})
+
+Vue.component('services', {
+  data: function() {
+    return {
+      todos: [ 'Web Development', 'Design', 'Integration', 'Trainning']
+    }
+  },
+  template: `
+  <main id="services">
     <div id="list-items-wrapper">
-      <list-input :todos="todos"></list-input>
-      <list-stats :todos="todos"></list-stats>
       <list-item
         v-for="todo in todos"
         :key="todo"
@@ -96,17 +101,27 @@ Vue.component('custom-main', {
         :todos="todos"
       >
       </list-item>
+      <list-stats :todos="todos"></list-stats>
     </div>
   </main>`
-})
-
-Vue.component('custom-footer', {
-  template: `
-  <footer>
-    <p>VueJS starter template checklist. Colors from <a target="__blank" href="https://yeun.github.io/open-color">Open Color</a>. Icons from <a target="__blank" href="https://feathericons.com">Feather Icons</a>.</p>
-  </footer>`
 })
 
 let vm = new Vue({
   el: '#app'
 })
+
+// Creating a new Vue instance and pass in an options object.
+var demo = new Vue({
+        el: '#nav-bar',
+        // Define properties and give them initial values.
+        data: {
+                active: 'home'
+        },
+
+        // Functions we will be using.
+        methods: {
+                makeActive: function(item){
+                        this.active = item;
+                }
+        }
+});
