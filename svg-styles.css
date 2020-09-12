@@ -25,20 +25,14 @@
   transition: stroke 0.1s ease-in-out;
 }
 
-/* svg trashcan color changes on hover of trashcan */
-.item .trash-svg:hover svg {
-  stroke: #f03e3e;
-  transition: stroke 0.2s ease-in-out;
-}
-
 /* svg checkbox color green */
 .item .circle-svg svg {
-  stroke: #69db7c;
+  stroke: rgb(103, 182, 235, 0.5);
   transition: stroke 0.2s ease-in-out;
 }
 
 .item .check-circle-svg svg {
-  stroke: #37b24d;
+  stroke: rgb(103, 182, 235, 1.0);
   transition: stroke 0.2s ease-in-out;
 }
 
