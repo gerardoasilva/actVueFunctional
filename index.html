@@ -16,7 +16,6 @@
         <a href="#" class="home" v-on:click="makeActive('home')">Home</a>
         <a href="#" class="projects" v-on:click="makeActive('projects')">Projects</a>
         <a href="#" class="services" v-on:click="makeActive('services')">Services</a>
-        <a href="#" class="contact" v-on:click="makeActive('contact')">Contact</a>
     </nav>
 
     <home v-if="active == 'home'"></home>
@@ -25,9 +24,7 @@
 
     <services v-if="active == 'services'"></services>
 
-    <contact v-if="active == 'contact'"></contact>
 
-    <div id="app"></div>
 </div>
 
 	</div>

@@ -62,6 +62,58 @@ Vue.component('home', {
       </main>`
 })
 
+Vue.component('projects', {
+  data: function() {
+    return {
+      articles: [{
+      "title": "The best web dev bootcap",
+      "url": "http://google.com",
+      "image": {
+          "large": "https://isquareesquare.com/images/small-img-11.jpg",
+          "small": "https://isquareesquare.com/images/small-img-11.jpg"
+      }
+    },
+    {
+      "title": "Hello world in every language",
+      "url": "http://google.com",
+      "image": {
+          "large": "https://isquareesquare.com/images/small-img-11.jpg",
+          "small": "https://isquareesquare.com/images/small-img-11.jpg"
+      }
+    },
+    {
+      "title": "How to manage time efficiently",
+      "url": "http://google.com",
+      "image": {
+          "large": "https://isquareesquare.com/images/small-img-11.jpg",
+          "small": "https://isquareesquare.com/images/small-img-11.jpg"
+      }
+    }],
+    layout: 'grid'
+    }
+  },
+  template: `
+    <form  id="projects-form" v-cloak>
+      <div class="bar">
+        <a class="list-icon" v-bind:class="{ 'active': layout == 'list'}" v-on:click="layout = 'list'"></a>
+        <a class="grid-icon" v-bind:class="{ 'active': layout == 'grid'}" v-on:click="layout = 'grid'"></a>
+      </div>
+
+      <ul v-if="layout == 'grid'" class="grid">
+        <li v-for="a in articles">
+          <a v-bind:href="a.url" target="_blank"><img v-bind:src="a.image.large" /></a>
+        </li>
+      </ul>
+
+      <ul v-if="layout == 'list'" class="list">
+        <li v-for="a in articles">
+          <a v-bind:href="a.url" target="_blank"><img v-bind:src="a.image.small" /></a>
+          <p>{{a.title}}</p>
+        </li>
+      </ul>
+
+    </form>`
+})
 
 Vue.component('services', {
   data: function() {
@@ -98,9 +150,6 @@ Vue.component('services', {
   }
 })
 
-let vm = new Vue({
-  el: '#app'
-})
 
 var navbar = new Vue({
   el: '#nav-bar',
@@ -113,3 +162,35 @@ var navbar = new Vue({
     }
   }
 });
+
+// var grid = new Vue({
+//   el: '#projects-form',
+//   data: {
+//     articles: [{
+//       "title": "The best web dev bootcap",
+//       "url": "http://google.com",
+//       "image": {
+//           "large": "https://isquareesquare.com/images/small-img-11.jpg",
+//           "small": "https://isquareesquare.com/images/small-img-11.jpg"
+//       }
+//     },
+//     {
+//       "title": "Hello world in every language",
+//       "url": "http://google.com",
+//       "image": {
+//           "large": "https://isquareesquare.com/images/small-img-11.jpg",
+//           "small": "https://isquareesquare.com/images/small-img-11.jpg"
+//       }
+//     },
+//     {
+//       "title": "How to manage time efficiently",
+//       "url": "http://google.com",
+//       "image": {
+//           "large": "https://isquareesquare.com/images/small-img-11.jpg",
+//           "small": "https://isquareesquare.com/images/small-img-11.jpg"
+//       }
+//     }],
+//     layout: 'grid'
+
+//   }
+// });
